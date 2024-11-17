@@ -48,14 +48,14 @@ except SQLAlchemyError as e:
 
 try:
     with Session() as session:
-        fornecedores = [
-            Produto(nome='Produto1', descricao='Descricao produto 1', preco='Preco produto 1', fornecedor_id=1),
-            Produto(nome='Produto2', descricao='Descricao produto 2', preco='Preco produto 2', fornecedor_id=2),
-            Produto(nome='Produto3', descricao='Descricao produto 3', preco='Preco produto 3', fornecedor_id=3),
-            Produto(nome='Produto4', descricao='Descricao produto 4', preco='Preco produto 4', fornecedor_id=4)
+        produtos = [
+            Produto(nome='Produto1', descricao='Descricao produto 1', preco=100, fornecedor_id=1),
+            Produto(nome='Produto2', descricao='Descricao produto 2', preco=350, fornecedor_id=2),
+            Produto(nome='Produto3', descricao='Descricao produto 3', preco=400, fornecedor_id=3),
+            Produto(nome='Produto4', descricao='Descricao produto 4', preco=50, fornecedor_id=4)
         ]
 
-        session.add_all(fornecedores)
+        session.add_all(produtos)
         session.commit()
 except SQLAlchemyError as e:
     print(f'Erro ao inserir produtos: {e}')
